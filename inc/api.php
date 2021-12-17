@@ -265,3 +265,8 @@ function meting_aplayer() {
     }
     return $response;
 }
+
+function random_word(){
+    // 一言 随机语句
+    
+}

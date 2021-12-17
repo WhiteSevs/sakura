@@ -95,7 +95,8 @@ window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
 					<div class="site-branding">
 						<?php if (akina_option('akina_logo')){ ?>
 						<div class="site-title">
-							<a href="<?php bloginfo('url');?>" ><img src="<?php echo akina_option('akina_logo'); ?>"></a>
+							<!-- <a href="<?php bloginfo('url');?>" ><img src="<?php echo akina_option('akina_logo'); ?>"></a> -->
+							<a href="<?php bloginfo('url');?>" ><img src="<?php echo 'https://q1.qlogo.cn/g?b=qq&nk='.$qq_str[1].'&s=640&t='.time(); ?>"></a>
 						</div>
 						<?php }else{ ?>
 						<span class="site-title">
