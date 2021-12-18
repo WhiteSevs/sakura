@@ -155,9 +155,9 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('Personal avatar', 'sakura'), /*个人头像*/
-        'desc' => __('The best size is 130px*130px.', 'sakura'), /*最佳尺寸130px*130px。*/
+        'desc' => __('Please input your personal avatar url link.', 'sakura'), /*请填入头像的api地址*/
         'id' => 'focus_logo',
-        'type' => 'upload');
+        'type' => 'text');
 
     $options[] = array(
         'name' => __('Text LOGO', 'sakura'), /*文字版LOGO*/
@@ -324,7 +324,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('Blogger description', 'sakura'), /*博主描述*/
-        'desc' => __('A self-described statement', 'sakura'), /*一段自我描述的话*/
+        'desc' => __('A self-described statement,If it is empty,then it is a random word"', 'sakura'), /*一段自我描述的话*/
         'id' => 'admin_des',
         'std' => '一沙一世界，一花一天堂。君掌盛无边，刹那成永恒。',
         'type' => 'textarea');

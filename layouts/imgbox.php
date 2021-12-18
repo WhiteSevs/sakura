@@ -1,7 +1,69 @@
 <?php
 
 //https://api.mashiro.top/cover
+function curl_get($url){
+	$header = array(
+	'Accept: application/json',
+	);
+	$curl = curl_init();
+	//设置抓取的url
+	curl_setopt($curl, CURLOPT_URL, $url);
+	//设置头文件的信息作为数据流输出
+	curl_setopt($curl, CURLOPT_HEADER, 0);
+	// 超时设置,以秒为单位
+	curl_setopt($curl, CURLOPT_TIMEOUT, 1);
+	
+	// 超时设置，以毫秒为单位
+	// curl_setopt($curl, CURLOPT_TIMEOUT_MS, 500);
+	// 设置请求头
+	curl_setopt($curl, CURLOPT_HTTPHEADER, $header);
+	curl_setopt($curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36 Edg/96.0.1054.62");
+	//设置获取的信息以文件流的形式返回，而不是直接输出。
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+	curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+	//执行命令
+	$data = curl_exec($curl);
+	
+	// 显示错误信息
+	if (curl_error($curl)) {
+	// print "Error: " . curl_error($curl);
+	} else {
+	// 打印返回的内容
+	// var_dump($data);
+	
+	curl_close($curl);
+	}
+	return $data;
+}
 
+function get_random_word(){
+	// 获取随机一言
+	$api_ = [
+	 "v1.hitokoto.cn" => [
+		 "url" => "https://v1.hitokoto.cn/",
+		 "key"=>"hitokoto",
+	 ],
+	 "api.fghrsh.net" => [
+				 "url" => "https://api.fghrsh.net/hitokoto/rand/?encode=jsc&uid=3335",
+				 "key" => "hitokoto",
+		 ],
+		 "v2.jinrishici.com" => [
+				 "url" => "https://v2.jinrishici.com/one.json",
+				 "key" => "data,content",
+		 ]
+	];
+	$random_api = array_rand($api_);
+	$random_api_url = $api_[$random_api]['url'];
+	$random_api_key_split = explode(",",$api_[$random_api]['key']);
+	$resp = json_decode(curl_get($random_api_url),true);
+	$result_word = "";
+	foreach($random_api_key_split as $key => $value){
+		 $result_word = $resp[$value];
+		 $resp = $resp[$value];
+	}
+	return $result_word;
+}
 ?>
 <figure id="centerbg" class="centerbg">
 <?php if ( !akina_option('focus_infos') ){ ?>
@@ -9,12 +71,22 @@
         <?php if (akina_option('focus_logo_text')):?>
         <h1 class="center-text glitch is-glitching Ubuntu-font" data-text="<?php echo akina_option('focus_logo_text', ''); ?>"><?php echo akina_option('focus_logo_text', ''); ?></h1>
    		<?php elseif (akina_option('focus_logo')):?>
-	     <div class="header-tou"><a href="<?php bloginfo('url');?>" ><img src="<?php echo akina_option('focus_logo', ''); ?>"></a></div>
+	     <div class="header-tou"><a href="<?php bloginfo('url');?>" ><img src="<?php $img_api = akina_option('focus_logo', '');
+	     echo str_replace("{{time()}}",time(),$img_api) ?>"></a></div>
 	  	<?php else :?>
          <div class="header-tou" ><a href="<?php bloginfo('url');?>"><img src="<?php bloginfo('template_url'); ?>/images/avatar.jpg"></a></div>	
       	<?php endif; ?>
 		<div class="header-info">
-            <p><?php echo akina_option('admin_des', 'Hi, Mashiro?'); ?></p>
+            <p>
+							<?php 
+								$_admin_des_ = akina_option('admin_des');
+								if(empty($_admin_des_)){
+									echo get_random_word();
+								}else{
+									echo $_admin_des_;
+								}
+							?>
+						</p>
             <?php if (akina_option('social_style')=="v2"): ?>
             <div class="top-social_v2">
                 <li id="bg-pre"><img class="flipx" src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/next-b.svg"/></li>

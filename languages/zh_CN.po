@@ -753,8 +753,8 @@ msgid "Blogger description"
 msgstr "博主描述"
 
 #: options.php:327
-msgid "A self-described statement"
-msgstr "一段自我描述的话"
+msgid "A self-described statement,If it is empty,then it is a random word"
+msgstr "一段自我描述的话,如果为空,那么为随机一言"
 
 #: options.php:333
 msgid "Footer info"
