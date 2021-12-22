@@ -947,6 +947,10 @@ msgstr "默认为聚焦，你也可以修改为其他，当然不能当广告用
 msgid "Top-feature 1 image"
 msgstr "聚焦图一"
 
+#: options.php:490
+msgid "Top-feature 1 image url"
+msgstr "聚焦图一链接"
+
 #: options.php:484 options.php:512 options.php:540
 msgid "size 257px*160px"
 msgstr "尺寸257px*160px"
@@ -967,6 +971,10 @@ msgstr "聚焦图一链接"
 msgid "Top-feature 2 image"
 msgstr "聚焦图二"
 
+#: options.php:524
+msgid "Top-feature 2 image url"
+msgstr "聚焦图二链接"
+
 #: options.php:518 options.php:519
 msgid "Top-feature 2 title"
 msgstr "聚焦图二标题"
@@ -982,6 +990,10 @@ msgstr "聚焦图二链接"
 #: options.php:539
 msgid "Top-feature 3 image"
 msgstr "聚焦图三"
+
+#: options.php:558
+msgid "Top-feature 3 image url"
+msgstr "聚焦图三链接"
 
 #: options.php:546 options.php:547
 msgid "Top-feature 3 title"

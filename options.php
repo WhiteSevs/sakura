@@ -479,89 +479,108 @@ function optionsframework_options()
         'class' => 'mini',
         'type' => 'text');
 
-    $options[] = array(
-        'name' => __('Top-feature 1 image', 'sakura'), /*聚焦图一*/
-        'desc' => __('size 257px*160px', 'sakura'), /*尺寸257px*160px*/
-        'id' => 'feature1_img',
-        'std' => $imagepath . '/temp.png',
-        'type' => 'upload');
-
-    $options[] = array(
-        'name' => __('Top-feature 1 title', 'sakura'), /*聚焦图一标题*/
-        'desc' => __('Top-feature 1 title', 'sakura'), /*聚焦图一标题*/
-        'id' => 'feature1_title',
-        'std' => 'feature1',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Top-feature 1 description', 'sakura'), /*聚焦图一描述*/
-        'desc' => __('Top-feature 1 description', 'sakura'), /*聚焦图一描述*/
-        'id' => 'feature1_description',
-        'std' => 'Description goes here 1',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Top-feature 1 link', 'sakura'), /*聚焦图一链接*/
-        'desc' => __('Top-feature 1 link', 'sakura'), /*聚焦图一链接*/
-        'id' => 'feature1_link',
-        'std' => '#',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Top-feature 2 image', 'sakura'), /*聚焦图二*/
-        'desc' => __('size 257px*160px', 'sakura'), /*尺寸257px*160px*/
-        'id' => 'feature2_img',
-        'std' => $imagepath . '/temp.png',
-        'type' => 'upload');
-
-    $options[] = array(
-        'name' => __('Top-feature 2 title', 'sakura'), /*聚焦图二标题*/
-        'desc' => __('Top-feature 2 title', 'sakura'), /*聚焦图二标题*/
-        'id' => 'feature2_title',
-        'std' => 'feature2',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Top-feature 2 description', 'sakura'), /*聚焦图二描述*/
-        'desc' => __('Top-feature 2 description', 'sakura'), /*聚焦图二描述*/
-        'id' => 'feature2_description',
-        'std' => 'Description goes here 2',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Top-feature 2 link', 'sakura'), /*聚焦图二链接*/
-        'desc' => __('Top-feature 2 link', 'sakura'), /*聚焦图二链接*/
-        'id' => 'feature2_link',
-        'std' => '#',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Top-feature 3 image', 'sakura'), /*聚焦图三*/
-        'desc' => __('size 257px*160px', 'sakura'), /*尺寸257px*160px*/
-        'id' => 'feature3_img',
-        'std' => $imagepath . '/temp.png',
-        'type' => 'upload');
-
-    $options[] = array(
-        'name' => __('Top-feature 3 title', 'sakura'), /*聚焦图三标题*/
-        'desc' => __('Top-feature 3 title', 'sakura'), /*聚焦图三标题*/
-        'id' => 'feature3_title',
-        'std' => 'feature3',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Top-feature 3 description', 'sakura'), /*聚焦图三描述*/
-        'desc' => __('Top-feature 3 description', 'sakura'), /*聚焦图三描述*/
-        'id' => 'feature3_description',
-        'std' => 'Description goes here 3',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Top-feature 3 link', 'sakura'), /*聚焦图三链接*/
-        'desc' => __('Top-feature 3 link', 'sakura'), /*聚焦图三链接*/
-        'id' => 'feature3_link',
-        'std' => '#',
-        'type' => 'text');
+        $options[] = array(
+            'name' => __('Top-feature 1 image', 'sakura'), /*聚焦图一*/
+            'desc' => __('size 257px*160px', 'sakura'), /*尺寸257px*160px*/
+            'id' => 'feature1_img',
+            'std' => $imagepath . '/temp.png',
+            'type' => 'upload');
+    
+        $options[] = array(
+            'name' => __('Top-feature 1 image url', 'sakura'), /*聚焦图一链接*/
+            'desc' => __('The highest priority', 'sakura'), /*该优先级大于上面的*/
+            'id' => 'feature1_img_url',
+            'std' => '',
+            'type' => 'text');
+            
+        $options[] = array(
+            'name' => __('Top-feature 1 title', 'sakura'), /*聚焦图一标题*/
+            'desc' => __('Top-feature 1 title', 'sakura'), /*聚焦图一标题*/
+            'id' => 'feature1_title',
+            'std' => 'feature1',
+            'type' => 'text');
+    
+        $options[] = array(
+            'name' => __('Top-feature 1 description', 'sakura'), /*聚焦图一描述*/
+            'desc' => __('Top-feature 1 description', 'sakura'), /*聚焦图一描述*/
+            'id' => 'feature1_description',
+            'std' => 'Description goes here 1',
+            'type' => 'text');
+    
+        $options[] = array(
+            'name' => __('Top-feature 1 link', 'sakura'), /*聚焦图一链接*/
+            'desc' => __('Top-feature 1 link', 'sakura'), /*聚焦图一链接*/
+            'id' => 'feature1_link',
+            'std' => '#',
+            'type' => 'text');
+    
+        $options[] = array(
+            'name' => __('Top-feature 2 image', 'sakura'), /*聚焦图二*/
+            'desc' => __('size 257px*160px', 'sakura'), /*尺寸257px*160px*/
+            'id' => 'feature2_img',
+            'std' => $imagepath . '/temp.png',
+            'type' => 'upload');
+        $options[] = array(
+            'name' => __('Top-feature 2 image url', 'sakura'), /*聚焦图二链接*/
+            'desc' => __('The highest priority', 'sakura'), /*该优先级大于上面的*/
+            'id' => 'feature2_img_url',
+            'std' => '',
+            'type' => 'text');
+        $options[] = array(
+            'name' => __('Top-feature 2 title', 'sakura'), /*聚焦图二标题*/
+            'desc' => __('Top-feature 2 title', 'sakura'), /*聚焦图二标题*/
+            'id' => 'feature2_title',
+            'std' => 'feature2',
+            'type' => 'text');
+    
+        $options[] = array(
+            'name' => __('Top-feature 2 description', 'sakura'), /*聚焦图二描述*/
+            'desc' => __('Top-feature 2 description', 'sakura'), /*聚焦图二描述*/
+            'id' => 'feature2_description',
+            'std' => 'Description goes here 2',
+            'type' => 'text');
+    
+        $options[] = array(
+            'name' => __('Top-feature 2 link', 'sakura'), /*聚焦图二链接*/
+            'desc' => __('Top-feature 2 link', 'sakura'), /*聚焦图二链接*/
+            'id' => 'feature2_link',
+            'std' => '#',
+            'type' => 'text');
+    
+        $options[] = array(
+            'name' => __('Top-feature 3 image', 'sakura'), /*聚焦图三*/
+            'desc' => __('size 257px*160px', 'sakura'), /*尺寸257px*160px*/
+            'id' => 'feature3_img',
+            'std' => $imagepath . '/temp.png',
+            'type' => 'upload');
+        
+        $options[] = array(
+            'name' => __('Top-feature 3 image url', 'sakura'), /*聚焦图三链接*/
+            'desc' => __('The highest priority', 'sakura'), /*该优先级大于上面的*/
+            'id' => 'feature3_img_url',
+            'std' => '',
+            'type' => 'text');
+    
+        $options[] = array(
+            'name' => __('Top-feature 3 title', 'sakura'), /*聚焦图三标题*/
+            'desc' => __('Top-feature 3 title', 'sakura'), /*聚焦图三标题*/
+            'id' => 'feature3_title',
+            'std' => 'feature3',
+            'type' => 'text');
+    
+        $options[] = array(
+            'name' => __('Top-feature 3 description', 'sakura'), /*聚焦图三描述*/
+            'desc' => __('Top-feature 3 description', 'sakura'), /*聚焦图三描述*/
+            'id' => 'feature3_description',
+            'std' => 'Description goes here 3',
+            'type' => 'text');
+    
+        $options[] = array(
+            'name' => __('Top-feature 3 link', 'sakura'), /*聚焦图三链接*/
+            'desc' => __('Top-feature 3 link', 'sakura'), /*聚焦图三链接*/
+            'id' => 'feature3_link',
+            'std' => '#',
+            'type' => 'text');    
 
     //文章页
     $options[] = array(
